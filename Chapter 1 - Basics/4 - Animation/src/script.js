@@ -1,6 +1,5 @@
 import './style.css'
 import * as THREE from 'three'
-import { Mesh } from 'three'
 
 const scene = new THREE.Scene()
 
@@ -32,7 +31,8 @@ const clock = new THREE.Clock()
 const tick = () => {
     const elapsedTime = clock.getElapsedTime()
 
-    box.rotation.y = elapsedTime
+    box.rotation.x = elapsedTime * 0.25
+    box.rotation.y = elapsedTime * 5
 
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
